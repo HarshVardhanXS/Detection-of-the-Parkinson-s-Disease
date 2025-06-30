@@ -1,42 +1,83 @@
-# Parkinson's Disease Detection Web App
+# 🧠 Parkinson's Disease Detection App
 
-This is a Streamlit-based web application for detecting Parkinson's Disease using machine learning.
+This interactive Streamlit web application allows you to **upload a dataset**, perform **exploratory data analysis (EDA)**, and build machine learning models to **detect Parkinson's disease** — all in your browser!
 
-## 🔧 Features
+---
 
-- Upload any Parkinson’s dataset in CSV format
-- Automatic display of:
-  - Dataset preview
-  - Descriptive statistics
-  - Correlation heatmap
-  - Model training (RandomForestClassifier)
-  - Evaluation metrics (Accuracy, Confusion Matrix, Classification Report)
+## 📌 Features
 
-## 🚀 How to Run
+✅ Upload your own CSV dataset (e.g., Parkinson's voice measurements)  
+✅ Automatically explore data statistics, null values, and correlations  
+✅ Visualize feature distributions, pair plots, clustering, and class distributions  
+✅ Train & evaluate **multiple ML models** without needing TensorFlow:
+- Random Forest
+- MLP (Multi-Layer Perceptron)
+- SVM
+- k-Nearest Neighbors
 
-1. Install the required packages:
-    ```bash
-    pip install -r requirements.txt
-    ```
+✅ View:
+- Confusion matrices
+- Classification reports
+- Comparative performance of all models
 
-2. Run the Streamlit app:
-    ```bash
-    streamlit run parkinsons_app.py
-    ```
+✅ Beautiful modern UI with background image & dark overlay.
 
-3. Open your browser to:
-    ```
-    http://localhost:8501
-    ```
+---
 
-## 📂 Files
+## 🚀 Installation
 
-- `parkinsons_app.py`: The main Streamlit application
-- `requirements.txt`: Python dependencies
-- `README.md`: Project instructions
+1️⃣ Clone or download this repository.
 
-## 📌 Note
+2️⃣ Install dependencies:
+```bash
+pip install -r requirements.txt
 
-Make sure your dataset has a column named `status` where:
-- `1` indicates Parkinson's
-- `0` indicates Healthy
+3️⃣ Run the Streamlit app:
+
+bash
+Copy
+Edit
+
+📂 Example Dataset
+Your dataset must contain a status column as the target label:
+
+status=1 → Parkinson’s
+
+status=0 → Healthy
+
+All other numeric columns are used as features.
+
+Example CSV snippet:
+
+cs
+Copy
+Edit
+MDVP:Fo(Hz),MDVP:Fhi(Hz),MDVP:Flo(Hz),status
+119.992,157.302,74.997,1
+122.400,148.650,113.819,1
+116.682,131.111,111.555,1
+🎨 Screenshots
+<p align="center"> <img src="https://images.unsplash.com/photo-1588776814546-ec7e194e3217" alt="Background" width="400"/> </p>
+⚙️ Technologies
+Python 3.8–3.13
+
+Streamlit
+
+pandas, numpy
+
+scikit-learn
+
+matplotlib, seaborn, plotly
+
+❗ Notes
+This project uses scikit-learn only — no TensorFlow needed.
+
+Works on Python 3.8–3.13 with 64-bit interpreter.
+
+If you encounter issues running the app directly with python script.py, always launch Streamlit apps with:
+
+bash
+Copy
+Edit
+streamlit run parkinsons_app.py
+
